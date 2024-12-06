@@ -1,8 +1,10 @@
-# Master Thesis
-This repository contains the code for a Master's thesis that applies the Soft Actor-Critic (SAC) algorithm to a multi-agent setting with the goal of converging to a Nash Equilibrium. The approach incorporates Normalizing Flows to model mixed strategies with tractable densities, allowing for detailed analysis of action probabilities. The method is applied to both complete and incomplete information games, where the focus is on computing approximate Nash equilibria in continuous-action environments. Experiments demonstrate the algorithm's ability to efficiently solve for high-quality approximate equilibria in these settings.
+# Finding mixed strategy equilibria with computable densities using soft-actor critic and normalizing flows
+## Intro
+This repository contains the code for my Master's thesis that adopts the Soft Actor-Critic (SAC) algorithm to a multi-agent setting with the goal of converging to a Nash Equilibrium in simple repeated games. The approach incorporates Normalizing Flows to model mixed strategies with tractable densities, allowing for detailed analysis of action probabilities. The method is applied to both complete and incomplete information games, where the focus is on computing approximate Nash equilibria in continuous-action environments. Experiments demonstrate the algorithm's ability to efficiently solve for high-quality approximate equilibria in these settings.
 
-The repository is loosely based on the SAC implementation of CleanRL ([CleanRL RL Algorithms - SAC](https://docs.cleanrl.dev/rl-algorithms/sac/)). We have split the code into several files:
 
+## Repo
+The repository is loosely based on the SAC implementation of CleanRL ([CleanRL RL Algorithms - SAC](https://docs.cleanrl.dev/rl-algorithms/sac/)). I have split the code into several files:
 - `main.py`
 - `sac_agents.py`
 - `models.py` (contains the actors of the agents, such as `Gaussian_Actor` or `Flow_Actor`)
