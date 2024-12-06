@@ -2,6 +2,8 @@
 ## Intro
 This repository contains the code for my Master's thesis that adopts the Soft Actor-Critic (SAC) algorithm to a multi-agent setting with the goal of converging to a Nash Equilibrium in simple repeated games. The approach incorporates Normalizing Flows to model mixed strategies with tractable densities, allowing for detailed analysis of action probabilities. The method is applied to both complete and incomplete information games, where the focus is on computing approximate Nash equilibria in continuous-action environments. Experiments demonstrate the algorithm's ability to efficiently solve for high-quality approximate equilibria in these settings.
 
+I am currently still working on this project with the aim of getting it published. 
+
 
 ## Repo
 The repository is loosely based on the SAC implementation of CleanRL ([CleanRL RL Algorithms - SAC](https://docs.cleanrl.dev/rl-algorithms/sac/)). I have split the code into several files:
