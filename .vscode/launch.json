@@ -1,0 +1,109 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debugger: BlottoWithInclompete flow",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "BlottoWithInclompete",
+                "--actor_type", "flow",
+                "--exp_name", "sac",
+                "--num_objects", "3",
+            ],
+        }, 
+        {
+            "name": "Debugger: BlottoWithInclompete gaussian",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "BlottoWithInclompete",
+                "--actor_type", "gaussian",
+                "--exp_name", "sac",
+                "--num_objects", "3",
+                "--total_timesteps" ,"20000",
+            ],
+        }, 
+        {
+            "name": "Debugger: BlottoWithIncompleteMultiDim flow",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "BlottoWithInclompeteMultiDim",
+                "--actor_type", "flow",
+                "--exp_name", "sac",
+                "--num_objects", "3",
+            ],
+        }, 
+        {
+            "name": "Debugger: BlottoWithIncompleteMultiDim gaussian",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "BlottoWithInclompeteMultiDim",
+                "--actor_type", "gaussian",
+                "--exp_name", "sac",
+                "--num_objects", "3",
+            ],
+        }, 
+        {
+            "name": "Debugger: FirstPricedAuctionStates flow",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "FirstPricedAuctionStates",
+                "--actor_type", "flow",
+                "--exp_name", "sac",
+            ],
+        }, 
+        {
+            "name": "Debugger: FirstPricedAuctionStates gaussian",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "FirstPricedAuctionStates",
+                "--actor_type", "gaussian",
+                "--exp_name", "sac",
+            ],
+        },
+        {
+            "name": "Debugger: AllPayAuctionStates flow",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "AllPayAuctionStates",
+                "--actor_type", "flow",
+                "--exp_name", "sac",
+            ],
+        }, 
+        {
+            "name": "Debugger: AllPayAuctionStates gaussian",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main_onPolicy.py",
+            "justMyCode": false,
+            "args": [
+                "--env_name", "AllPayAuctionStates",
+                "--actor_type", "gaussian",
+                "--exp_name", "sac",
+            ],
+        }, 
+    ]
+}
