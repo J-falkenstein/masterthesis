@@ -1,11 +1,12 @@
 # Master Thesis
+This repository contains the code for a Master's thesis that applies the Soft Actor-Critic (SAC) algorithm to a multi-agent setting with the goal of converging to a Nash Equilibrium. The approach incorporates Normalizing Flows to model mixed strategies with tractable densities, allowing for detailed analysis of action probabilities. The method is applied to both complete and incomplete information games, where the focus is on computing approximate Nash equilibria in continuous-action environments. Experiments demonstrate the algorithm's ability to efficiently solve for high-quality approximate equilibria in these settings.
 
-The repository is based on the SAC implementation of CleanRL ([CleanRL RL Algorithms - SAC](https://docs.cleanrl.dev/rl-algorithms/sac/)). We have split the code into several files:
+The repository is loosely based on the SAC implementation of CleanRL ([CleanRL RL Algorithms - SAC](https://docs.cleanrl.dev/rl-algorithms/sac/)). We have split the code into several files:
 
 - `main.py`
 - `sac_agents.py`
 - `models.py` (contains the actors of the agents, such as `Gaussian_Actor` or `Flow_Actor`)
-- `Environment` folder
+- `Environment\` (contains the environments, such as `blottoGames`)
 - `replay_buffer_tensor.py` (for our own replay buffer implementation)
 
 
@@ -34,30 +35,3 @@ This file reads arguments, initializes the environment, agents, and the replay b
 ### Beta
 
 ### Flows
-
-We utilize the `normflows` package from [here](https://github.com/VincentStimper/normalizing-flows).
-
-Adjusted the `normflows` package by adding the following function in `core.py`:
-
-```python
-def log_prob_noBaseProb(self, x):
-    """Get log probability for batch but disregard the base distribution probability.
-    So we can add the base distribution probability later on.
-
-    Args:
-      x: Batch
-
-    Returns:
-      log probability without the base distribution probability
-    """
-    log_q = torch.zeros(len(x), dtype=x.dtype, device=x.device)
-    z = x
-    for i in range(len(self.flows) - 1, -1, -1):
-        z, log_det = self.flows[i].inverse(z)
-        log_q += log_det
-    # log_q += self.q0.log_prob(z)
-    # could return Z to compare to input. 
-    return log_q, z
-```
-
-This enables to calculate the log probability of the flow without the base distribution because we use our own parameterized base distribution.
